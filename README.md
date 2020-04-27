@@ -27,5 +27,5 @@ Updates currently implemented....
 
 3. Add Sound Enable/Disable option for the H264/H265 Encoder box.
 
-Note that changing encoder from H265 to H264 does not currently change the video resolution. Thsi is controlled by the strategy.sh file. This has not yet been optimised for the different codecs. 
+Note that changing encoder from H265 to H264 does not currently change the video resolution. This is controlled by the strategy.sh file. This has not yet been optimised for the different codecs. 
 
