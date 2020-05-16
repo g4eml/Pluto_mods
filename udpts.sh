@@ -32,9 +32,10 @@ PATPERIOD=$(grep "\bpatperiod\b" /www/settings.txt | cut -f2 -d' ')
 H265BOX=$(grep "\bh265box\b" /www/settings.txt | cut -f2 -d' ')
 CODEC=$(grep "\bcodec\b" /www/settings.txt | cut -f2 -d' ')
 SOUND=$(grep "\bsound\b" /www/settings.txt | cut -f2 -d' ')
+AUDIOINPUT=$(grep "\baudioinput\b" /www/settings.txt | cut -f2 -d' ')
 REMUX=$(grep "\bremux\b" /www/settings.txt | cut -f2 -d' ')
 
-echo FREQ $FREQ MODE $MODE CONSTEL $CONSTEL SR $SR FEC $FEC PILOT $PILOTS_TXT FRAME $FRAME_TXT Rof $ROLLOFF PCRPTS $PCRPTS PATPERIOD $PATPERIOD CODEC $CODEC SOUND $SOUND
+echo FREQ $FREQ MODE $MODE CONSTEL $CONSTEL SR $SR FEC $FEC PILOT $PILOTS_TXT FRAME $FRAME_TXT Rof $ROLLOFF PCRPTS $PCRPTS PATPERIOD $PATPERIOD CODEC $CODEC SOUND $SOUND AUDIOINPUT $AUDIOINPUT
 
 if [ "$PILOTS_TXT" = "On" ]; then
         PILOTS="-p"
@@ -71,7 +72,7 @@ echo VideoRate $VIDEORATE
 if [ "$H265BOX" = "" ]; then
         echo H265BOX not present
 else        
-com="enc_ip=$H265BOX&codec=$CODEC&res=$RESOLUTION&fps=$VIDEOFPS&keyint=$GOPSIZE&v_bitrate=$VIDEORATE&sound=$SOUND&audio_input=hdmi&audio_channels=$AUDIOCHANNELS&audio_bitrate=$AUDIORATE&enabled=$PTT&pluto_ip=$myip&pluto_port=8282"
+com="enc_ip=$H265BOX&codec=$CODEC&res=$RESOLUTION&fps=$VIDEOFPS&keyint=$GOPSIZE&v_bitrate=$VIDEORATE&sound=$SOUND&audio_input=$AUDIOINPUT&audio_channels=$AUDIOCHANNELS&audio_bitrate=$AUDIORATE&enabled=$PTT&pluto_ip=$myip&pluto_port=8282"
 echo $com
 php-cgi /www/encoder_control.php $com
 fi

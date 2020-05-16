@@ -89,20 +89,21 @@ function set_enc_audio($auth){
 		$channel=0;
 		//mono
 	}
-	
+
+
 	//fixed to AAC
 	$xml = '<?xml version: "1.0" encoding="utf-8"?>
 	<request>
 	<audioenc>
-	<codec>2</codec>                        
-	<samples>48000</samples>                        
-	<bitrate>'.$_POST['audio_bitrate'].'</bitrate>                        
-	<channel>'.$channel.'</channel>                        
-	<input>'.$input.'</input>                 
+        <channel>'.$channel.'</channel>         
+	<bitrate>'.$_POST['audio_bitrate'].'</bitrate>
+        <codec>2</codec>
+        <samples>48000</samples>                      
+	<input>'.$input.'</input>           
 	</audioenc>
 	</request>';
 
-	//echo $xml;
+        //echo $xml;
 	
 	
 	post($auth,$xml,$server);

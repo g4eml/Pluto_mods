@@ -224,6 +224,7 @@ if ( isset( $_POST[ 'savefw' ] ) ) {
 <tr> <td>IP(192.168.1.120 default)</td> <td> <input type="text" name="h265box" value=""></td> </tr>
 <tr> <td>Codec</td> <td><select name="codec"> <option value= "H264">H264</option> <option value= "H265">H265</option> </select> </td> </tr>
 <tr> <td>Sound</td> <td> <select name="sound"> <option value="On">On</option> <option value="Off">Off</option> </select> </td> </tr>
+<tr> <td>Audio Input</td> <td> <select name="audioinput"> <option value="line">Line</option> <option value="HDMI">HDMI</option> </select> </td> </tr>
 </table>
 <input type="submit" value="Apply Settings">
 <h2>Advanced (Remux)</h2>
